@@ -1,0 +1,17 @@
+@import './styles/media-breackpoints.scss';
+
+.container {
+	display: flex;
+	flex-direction: column;
+	max-width: 100vw;
+	height: 100vh;
+	margin: 0 auto;
+	background: url("./assets/img/bike_bg.jpg") center no-repeat;
+	background-size: cover;
+}
+
+@include tablet() {
+	.container {
+		background-position: center;
+	}
+}

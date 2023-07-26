@@ -1,0 +1,179 @@
+@import '../../../styles/media-breackpoints.scss';
+
+$colorWhite: #fff;
+$mb: 20px;
+$ff: 'Times New Roman', Times, serif;
+$fz: 20px;
+$tt: uppercase;
+
+.employeelist {
+	flex: 1 1 100%;
+	margin: 2% 7%;
+	display: flex;
+		flex-direction: column;
+
+	&__title_container {
+		display: flex;
+			justify-content: space-between;
+		margin-bottom: $mb - 4px;
+	}
+
+	&__title {
+		color: $colorWhite;
+		font-family: $ff;
+		font-size: $fz + 15px;
+	}
+
+	&__info {
+		align-self: end;
+		padding: 10px;
+		font-family: $ff;
+		font-size: $fz + 5px;
+		color: $colorWhite;
+		background-color: rgba(36, 36, 52, 0.3);
+
+		&_bold {
+			font-weight: bold;
+		}
+	}
+
+	&__btn {
+		padding: 9px 17px;
+		width:fit-content;
+		margin-bottom: $mb - 4px;
+		font-family: $ff;
+		font-size: $fz;
+		text-transform: $tt;
+		text-align: center;
+		background:#1182ec;
+		box-shadow: 7px 6px 15px 1px rgba(89, 126, 249, 0.5);
+		border-radius: 5px;
+		color: $colorWhite;
+		transition-duration: 0.3s;
+  	-webkit-transition-duration: 0.4s; 
+		
+		&:hover {
+			transition-duration: 0.3s;
+			background: darken(#1182ec,12%);
+		}
+	}
+
+	&__msg {
+		color: $colorWhite;
+		font-family: $ff;
+		font-size: $fz;
+		margin-bottom: $mb;
+	}
+
+	&__msgErr {
+		color: red;
+		font-family: $ff;
+		font-size: $fz;
+		margin-bottom: $mb;
+	}
+
+	&__search {
+		width: fit-content;
+		margin-top: 0;
+		margin-bottom: $mb - 4px;
+		cursor: pointer;
+
+	}
+}
+
+@include desktop_lg() {
+	.employeelist {
+		margin: 2% 3%;
+
+		&__title {
+			font-size: $fz + 10px;
+		}
+
+		&__info {
+			font-size: $fz;
+		}
+	}
+}
+
+@include tablet() {
+	.employeelist {
+		&__title {
+			text-align: center;
+		}
+
+		&__info {
+			display: none;
+		}
+	}
+}
+
+.employeedetails {
+	flex: 1 1 100%;
+	margin: 2% 7%;
+	display: flex;
+		flex-direction: column;
+
+	&__title {
+		color: $colorWhite;
+		font-family: $ff;
+		font-size: $fz + 15px;
+		margin-bottom: $mb;
+	}
+
+	&__msg {
+		color: $colorWhite;
+		font-family: $ff;
+		font-size: $fz;
+		margin-bottom: $mb;
+	}
+
+	&__msgErr {
+		color: red;
+		font-family: $ff;
+		font-size: $fz;
+		margin-bottom: $mb;
+	}
+
+	&__btn {
+		padding: 9px 17px;
+		width: fit-content;
+		margin: 20px 20px 20px 0;
+
+		&:hover {
+			background: darken(#1182ec,12%);
+		}
+	}
+
+	&__btnpass {
+		padding: 3px 20px;
+		width: fit-content;
+		font-size: $fz;
+		background:#1182ec;
+		box-shadow: 7px 6px 15px 1px rgba(89, 126, 249, 0.5);
+		border-radius: 5px;
+		cursor: none;
+
+		// &:hover {
+		// 	background: darken(#1182ec,12%);
+		// }
+	}
+
+	&__detail {
+		padding: 5px 15px 5px 0;
+		border: none;
+		font-size: $fz + 5px;
+		color: $colorWhite;
+	}
+}
+
+@include mobile() {
+	.employeedetails {
+		margin: 2% 3%;
+
+		&__title {
+			font-size: $fz + 10px;
+			text-align: center;
+			margin-bottom: $mb - 10px;
+		}
+	}
+}

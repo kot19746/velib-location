@@ -1,0 +1,156 @@
+@import '../../styles/media-breackpoints.scss';
+
+$colorWhite: #fff;
+$fz: 20px;
+$tt: uppercase;
+
+.header {
+	flex: 0 0 auto;
+	max-width: 100%;
+	padding: 5px 50px;
+	background-color: rgba(36, 36, 52, 0.2);
+	position: sticky;
+		top: 0;
+	z-index: 100;
+
+	&__wrapper {
+		width: 100%;
+		display: flex;
+			justify-content: space-between;
+			align-items: center;
+	}
+
+	&__logo {
+		flex-shrink: 0;
+	}
+
+	&__img {
+		border-radius: 50%;
+	}
+	
+	&__menu {
+		margin-right: 5px;
+		display: flex;
+			justify-content: space-around;
+	}
+
+	&__menuItem {
+		margin-right: 50px;
+
+		&:last-child {
+			margin-right: 0;
+		}
+	}
+
+	&__phone {
+		padding: 10px;
+		font-family: 'Times New Roman', Times, serif;
+		font-size: $fz;
+		text-transform: $tt;
+		text-align: center;
+		color: $colorWhite;
+		background-color: rgba(36, 36, 52, 0.3);
+		position: relative;
+		cursor: pointer;
+		transition-duration: 0.3s;
+  	-webkit-transition-duration: 0.3s; 
+		
+		&:hover {
+			transition-duration: 0.3s;
+			background-color: rgba(36, 36, 52, 0.7);
+		}
+	}
+
+	&__link {
+		padding: 10px 17px;
+		font-family: 'Times New Roman', Times, serif;
+		font-size: $fz;
+		text-transform: $tt;
+		text-align: center;
+		background:#1182ec;
+		box-shadow: 7px 6px 15px 1px rgba(89, 126, 249, 0.5);
+		border-radius: 5px;
+		color: $colorWhite;
+		position: relative;
+		transition-duration: 0.3s;
+  	-webkit-transition-duration: 0.4s; 
+		
+		&:hover {
+			transition-duration: 0.3s;
+			background: darken(#1182ec,12%);
+		}
+
+		&:after {
+			content: "";
+			width: 100%;
+			height: 100%;
+			display: block;
+			position: absolute;
+				left: 0;
+				top:0;
+			opacity: 0;
+			border-radius: 5px;
+			box-shadow: 0 0 10px 40px $colorWhite;
+			transition: all 0.5s;
+		}
+
+		&:active:after {
+			position: absolute;
+				left: 0;
+				top:0;
+			opacity: 1;
+			box-shadow: 0 0 0 0 $colorWhite;
+			border-radius: 5px;
+			transition: 0s;
+		}
+
+		&:active {
+			top: 1px;
+		}
+	}
+}
+
+@include desktop_lg() {
+	.header {
+		padding: 5px 15px;
+
+		&__menuItem {
+			margin-right: 25px;
+		}
+	}
+}
+
+@include tablet() {
+	.header {
+		padding: 5px;
+
+		&__logo {
+			margin-right: 10px;
+		}
+
+		&__menuItem {
+			margin-right: 7px;
+		}
+
+		&__link {
+			font-size: $fz - 4px;
+		}
+  }
+}
+
+@include mobile() {
+	.header {
+		&__menu {
+		flex-direction: column;
+		align-items: flex-end;
+		}
+
+		&__logo {
+			margin-left: 10px;
+		}
+
+		&__menuItem {
+			margin: 15px 0;
+		}
+	}
+}

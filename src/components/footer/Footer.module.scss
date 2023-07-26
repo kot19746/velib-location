@@ -1,0 +1,53 @@
+@import '../../styles/media-breackpoints.scss';
+
+$textColor: #fff;
+$fz: 20px;
+$tt: uppercase;
+
+.footer {
+	flex: 0 0 auto;
+	max-width: 100%;
+	padding: 10px 50px;;
+	background: rgba(36, 36, 52, 0.5);
+
+	&__wrapper {
+		width: 100%;
+		display: flex;
+			justify-content: space-between;
+			align-items: center;
+	}
+
+	&__copiright {
+		font-family: 'Times New Roman', Times, serif;
+		font-size: $fz;
+		text-transform: $tt;
+		color: $textColor;
+	}
+
+	&__link {
+		padding: 7px;
+		font-family: 'Times New Roman', Times, serif;
+		font-size: $fz;
+		text-transform: $tt;
+		color: $textColor;
+		cursor: pointer;
+		
+		&:hover {
+			background: darken(#1182ec,12%);
+		}
+	}
+}
+
+@include mobile() {
+	.footer {
+		padding: 10px;
+
+		&__copiright {
+			font-size: $fz -  5px;
+		}
+
+		&__link {
+			font-size: $fz - 5px;
+		}
+	}
+}

@@ -1,0 +1,148 @@
+$colorWhite: #fff;
+$fz: 20px;
+$ff: 'Times New Roman', Times, serif;
+$tt: uppercase;
+
+.table__container {
+	height: 23em;
+	height: 45vh;
+}
+
+.table {
+	display: flex;
+		flex-flow: column;
+	width: 100%;
+	height: 100%;
+	padding-left: 12px;
+	border: 5px solid $colorWhite;
+	border-top: 5px solid $colorWhite;
+	border-bottom: 5px solid $colorWhite;
+	font-size: $fz - 5px;
+	background: $colorWhite;
+
+	&__head {
+		display: table;
+		table-layout: fixed;
+		width: calc(100% - 0.9em);
+	}
+
+	&__th {
+		padding: 4px;
+		border: none;
+		font-size: $fz;
+		font-weight: normal;
+		font-family: $ff;
+		text-align: center;
+		color: $colorWhite;
+		background: #2f93f0;
+	}
+
+	&__body {
+		display: block;
+		padding-right: 14px;
+		overflow-y: scroll;
+
+		&_tr {
+			display: table;
+			table-layout: fixed;
+			width: 100%;
+
+			&:nth-child(even){
+				background: #f8f8f8;
+			}
+
+			&:hover{
+				background:#d7ebf7;
+				cursor: pointer;
+			}
+		}
+
+		&_done {
+			background-color: rgba(226, 221, 221, 0.859);
+
+			&:nth-child(even){
+				background-color: rgba(226, 221, 221, 0.859);
+			}
+
+			&:hover{
+				background:#d7ebf7;
+				cursor: pointer;
+			}
+		}
+		
+	}
+
+	&__td {
+		padding: 5px 10px;
+		border: none;
+		font-size: $fz - 2px;
+		color: rgb(83, 82, 82);
+		overflow: hidden;
+	}
+	
+	&__td_txt,
+	&__td_btn {
+		text-align: center;
+	}
+
+	&__btn {
+		padding: 10px;
+		border-radius: 5px;
+		font-family: $ff;
+		font-size: 14px;
+		text-align: center;
+		text-transform: uppercase;
+		color: $colorWhite;
+		background:#68abe9;
+		box-shadow: 7px 6px 15px 1px rgba(89, 126, 249, 0.5);
+		transition-duration: 0.5s;
+		-webkit-transition-duration: 0.5s;
+
+		&:hover {
+			transition-duration: 0.5s;
+			background: #035db2
+		}
+	}
+}
+
+@include desktop_xl() {
+	.table {
+		&__td {
+			overflow-x: auto;
+		}
+
+		&__td_btn {
+			overflow: hidden;
+		}
+	}
+}
+
+@include desktop_lg() {
+	.table {
+		&__th_tablet,
+		&__td_tablet {
+			display: none;
+		}
+	}
+}
+
+@include tablet() {
+	.table {
+		&__td {
+			padding: 5px;
+		}
+
+		&__btn {
+			margin-right: 0;
+		}
+	}
+}
+
+@include mobile() {
+	.table {
+		&__th_mobile,
+		&__td_mobile {
+			display: none;
+		}
+	}
+}

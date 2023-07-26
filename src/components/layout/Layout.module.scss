@@ -1,0 +1,16 @@
+@import '../../styles/media-breackpoints.scss';
+
+.main__wrapper {
+	flex: 1 1 auto;
+	margin: 0;
+	display: flex;
+		justify-content: center;
+		align-items: flex-start;
+	overflow: hidden;
+}
+
+@include desktop_lg() {
+	.main__wrapper {
+		overflow-y: auto;
+	}
+}
